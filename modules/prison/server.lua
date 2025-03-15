@@ -120,6 +120,8 @@ function UnjailPlayer(source, breakout)
     TriggerClientEvent("pickle_prisons:unjailPlayer", source, data)
 end
 
+exports("UnjailPlayer", UnjailPlayer)
+
 function UpdatePrisonTime(source, time)
     local identifier = GetIdentifier(source)
     MySQL.Async.execute("UPDATE pickle_prisons SET time=@time WHERE identifier=@identifier", {
